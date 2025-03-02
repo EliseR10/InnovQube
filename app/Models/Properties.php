@@ -11,5 +11,6 @@ class Properties extends Model
         'name',
         'description',
         'price_per_night',
+        'image_url'
     ];
 }

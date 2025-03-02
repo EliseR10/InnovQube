@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->decimal('price_per_night', 8, 2);
+            $table->string('image_url')->nullable();
             $table->timestamps(); //created _at and updated_at
         });
     }
