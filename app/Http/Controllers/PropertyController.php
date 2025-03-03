@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Properties;
+use Illuminate\Support\Facades\Storage;
 
 class PropertyController extends Controller
 {
@@ -15,3 +16,6 @@ class PropertyController extends Controller
         return view('welcome', compact('properties'));
     }
 }
+
+    
+
