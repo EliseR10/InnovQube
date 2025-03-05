@@ -35,7 +35,7 @@
             
             <!-- Authentication Buttons -->
             <div>
-                <button class="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-700">Log in</button>
+                <button class="bg-black text-white px-4 py-2 rounded hover:bg-pink-700">Dashboard</button>
             </div>
         </div>
     </header>
