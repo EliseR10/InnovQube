@@ -53,6 +53,7 @@
             @if(request()->routeIs('booking'))
                 @livewire('booking-manager')
             @endif
+            <livewire:modal.edit-booking/>
         </main>
 
 

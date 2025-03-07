@@ -34,9 +34,12 @@
 
                 <!-- Buttons -->
                 <div class="flex space-x-2">
-                    <button type="button" wire:click="showModal" class="bg-pink-700 text-white px-3 py-1 rounded hover:bg-pink-500">
+                    <div>
+                    <button type="button" wire:click="$dispatch('open-modal')" class="bg-pink-700 text-white px-3 py-1 rounded hover:bg-pink-500">
                         <i class="fas fa-pen"></i>
                     </button>
+                    </div>
+
                     <button type="button" wire:click="deleteBooking" class="bg-pink-700 text-white px-3 py-1 rounded hover:bg-pink-500">
                         <i class="fas fa-trash"></i>
                     </button>
@@ -49,38 +52,6 @@
                 <h4>Price: </h4>
             </div>
         </div>
+
     </div>
-
-    @if($showModal)
-    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50">
-        <div class="bg-white p-6 rounded-lg w-96">
-            <h3 class="text-lg font-semibold">Edit Reservation</h3>
-
-            <div class="mt-4">
-                <!-- Form content for editing -->
-                <div>
-                    <!-- Start Date -->
-                    <label for="start-date" class="mr-2"><strong>Start date:</strong></label>
-                    <input type="date" wire:model="startDate" id="start-date">
-
-                    <!-- End Date -->
-                    <label for="end-date" class="ml-5 mr-2"><strong>End date:</strong></label>
-                    <input type="date" wire:model="endDate" id="end-date">
-                </div>
-
-                <div>
-                    <p><strong>Total Price:</strong> £0.00</p>
-                </div>
-
-                <button wire:click="saveChanges" class="bg-blue-500 text-white px-4 py-2 rounded mt-2">
-                    Save Changes
-                </button>
-                <button wire:click="closeModal" class="bg-red-500 text-white px-4 py-2 rounded mt-2">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-   @endif
-
 </div>
