@@ -14,7 +14,8 @@
             </div>
 
             <div>
-                <p><strong>Total Price:</strong> £ {{ $price }}</p>
+                <p><strong>Price per night:</strong> £ {{ $price }}</p>
+                <p><strong>Total Price:</strong> £ </p>
             </div>
 
             <div class="flex flex-col items-center">
@@ -24,12 +25,13 @@
     </div>
 
     <div class="p-8 mt-5 min-w-[600px] bg-white shadow rounded-lg flex flex-col items-center">
-        <h2 class="text-xl font-semibold text-gray-800">Your reservations</h2>
+        <h2 class="text-xl font-semibold text-gray-800">Your Reservations</h2>
 
-        <div class="booking-info space-y-4 w-full max-w-[600px]">
+        @foreach($bookings as $booking)
+        <div class="booking-info space-y-4 w-full max-w-[600px] mt-5">
             <div class="flex justify-between w-full">
                 <!-- Property Name -->
-                <h3 class="text-lg font-semibold">Property Name:</h3>
+                <h3 class="text-lg font-semibold">Property Name: {{ $name }}</h3>
 
                 <!-- Buttons -->
                 <div class="flex space-x-2">
@@ -47,10 +49,11 @@
 
             <!-- Other Details -->
             <div class="space-y-2">
-                <h4>Date: </h4>
-                <h4>Price: </h4>
+                <h4><strong>Booking Date:</strong> {{ $booking-> formatted_start_date }} to {{ $booking-> formatted_end_date }}</h4>
+                <h4><strong>Price per night:</strong> £ {{ $booking-> price_per_night }}</h4>
+                <h4><strong>Total Price:</strong> £ {{ $booking-> total_price }}</h4>
             </div>
         </div>
-
+    @endforeach
     </div>
 </div>

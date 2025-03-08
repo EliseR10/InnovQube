@@ -18,7 +18,8 @@
                 </div>
 
                 <div class="my-5">
-                    <p><strong>Total Price:</strong> £0.00</p>
+                    <p><strong>Price per night:</strong> £0.00</p>
+                    <h4><strong>Total Price:</strong> £0.00</h4>
                 </div>
 
                 <button type="submit" wire:click="saveChanges" class="bg-pink-700 text-white px-3 py-1 rounded hover:bg-pink-500">

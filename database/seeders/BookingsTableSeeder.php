@@ -17,6 +17,8 @@ class BookingsTableSeeder extends Seeder
         Bookings::create([
             'property_id' => 1,
             'user_id' => 3,
+            'price_per_night' => 150,
+            'total_price' => 450,
             'start_date' => '2025-03-01',
             'end_date' => '2025-03-05'
         ]);

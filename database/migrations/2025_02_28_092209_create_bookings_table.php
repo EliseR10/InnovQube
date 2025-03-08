@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('property_id')->constrained()->onDelete('cascade');
+            $table->decimal('price_per_night', 8, 2);
+            $table->decimal('total_price', 10, 2)->nullable();
             $table->date('start_date');
             $table->date('end_date');
             $table->timestamps();
