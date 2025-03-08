@@ -9,7 +9,7 @@
         <p class="text-md font-bold text-black-500">£{{ $price }} / night</p>
 
         <div class="flex justify-end mt-4">
-            <button class="mt-4 bg-pink-700 text-white px-4 py-2 rounded hover:bg-pink-500"><a href=" {{route('booking')}}">
+            <button class="mt-4 bg-pink-700 text-white px-4 py-2 rounded hover:bg-pink-500"><a href=" {{route('booking', ['name' => $name, 'price' => $price]) }}">
                 Book Now!</a>
             </button>
         </div>

@@ -51,7 +51,7 @@
 
             <!--Render Livewire components here -->
             @if(request()->routeIs('booking'))
-                @livewire('booking-manager')
+            <livewire:booking-manager :name="request('name')" :price="request('price')" />
             @endif
             <livewire:modal.edit-booking/>
         </main>

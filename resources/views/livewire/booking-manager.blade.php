@@ -1,8 +1,7 @@
 <div>
     <div class="p-8 mt-5 min-w-[600px] bg-white shadow rounded-lg flex flex-col items-center">
-        <h2 class="text-xl font-semibold text-gray-800 flex mb-4">Reserve</h2>
-        <h4 class="mb-5">Add Property Name here</h4>
-        
+        <h2 class="text-xl font-semibold text-gray-800 flex mb-4">Reserve: {{$name}}</h2>
+
         <div class="booking-form space-y-4 w-full max-w-[600px]">
             <div>
                 <!--Start Date-->
@@ -15,7 +14,7 @@
             </div>
 
             <div>
-                <p><strong>Total Price:</strong> £0.00</p>
+                <p><strong>Total Price:</strong> £ {{ $price }}</p>
             </div>
 
             <div class="flex flex-col items-center">
