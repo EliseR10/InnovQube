@@ -30,8 +30,8 @@ class BookingManager extends Component
         $this->endDate = null;
         $this->total_price = 0;
 
-        //Retrieve all bookings from the database
-        $this->bookings = Bookings::all();
+        //Retrieve all bookings from the database + properties data
+        $this->bookings = Bookings::with('property')->get();
 
         //Format the start_date / end_date for each booking
         foreach($this->bookings as $booking) {

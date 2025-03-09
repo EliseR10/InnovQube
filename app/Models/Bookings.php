@@ -15,4 +15,9 @@ class Bookings extends Model
         'start_date',
         'end_date',
     ];
+
+    //Define the relationship to the Property Model
+    public function property() {
+        return $this->belongsTo(Properties::class);
+    }
 }

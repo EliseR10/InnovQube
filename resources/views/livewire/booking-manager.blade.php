@@ -38,7 +38,7 @@
         <div class="booking-info space-y-4 w-full max-w-[600px] mt-5">
             <div class="flex justify-between w-full">
                 <!-- Property Name -->
-                <h3 class="text-lg font-semibold">Property Name: {{ $booking -> name }}</h3>
+                <h3 class="text-lg font-semibold">Property Name: {{ $booking -> property -> name }}</h3>
 
                 <!-- Buttons -->
                 <div class="flex space-x-2">
