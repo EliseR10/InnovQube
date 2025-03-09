@@ -10,19 +10,21 @@ class card extends Component
 {
     public $image;
     public $name;
+    public $id;
     public $description;
     public $price;
     
     /**
      * Create a new component instance.
      */
-    public function __construct($image = "", $name = "", $description = "", $price = 0)
+    public function __construct($image = "", $name = "", $description = "", $price = 0, $id = "")
     {
         //
         $this->image = $image;
         $this->name = $name;
         $this->description = $description;
         $this->price = $price;
+        $this->id = $id;
     }
 
     /**

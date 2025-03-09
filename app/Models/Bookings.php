@@ -10,6 +10,8 @@ class Bookings extends Model
     protected $fillable = [
         'user_id',
         'property_id',
+        'price_per_night',
+        'total_price',
         'start_date',
         'end_date',
     ];

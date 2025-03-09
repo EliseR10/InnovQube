@@ -9,6 +9,7 @@ class Properties extends Model
     //Define which attributes are mass assignable
     protected $fillable = [
         'name',
+        'id',
         'description',
         'price_per_night',
         'image_url'

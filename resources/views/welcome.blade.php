@@ -5,6 +5,7 @@
         @foreach($properties as $property)
             <x-card 
                 :name="$property->name" 
+                :id="$property->id"
                 :image="$property->image_url" 
                 :description="$property->description" 
                 :price="number_format($property->price_per_night, 2)" 
