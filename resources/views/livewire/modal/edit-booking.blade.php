@@ -7,19 +7,19 @@
             <div class="mt-4">
                 <!-- Form content for editing -->
                 <div>
-                    <p><strong>Property Name:</strong></p>
+                    <p><strong>Property Name:</strong> {{ $propertyName }}</p>
                     <!-- Start Date -->
-                    <label for="start-date" class="mr-2"><strong>Start date:</strong></label>
-                    <input type="date" wire:model="startDate" id="start-date">
+                    <label for="start-date" class="mr-2"><strong>Start date:</strong> </label>
+                    <input type="date" wire:model="FormattedStartDate" id="start-date" wire:change="calculateTotalPrice">
 
                     <!-- End Date -->
-                    <label for="end-date" class="ml-5 mr-2"><strong>End date:</strong></label>
-                    <input type="date" wire:model="endDate" id="end-date">
+                    <label for="end-date" class="ml-5 mr-2"><strong>End date:</strong> </label>
+                    <input type="date" wire:model="FormattedEndDate" id="end-date" wire:change="calculateTotalPrice">
                 </div>
 
                 <div class="my-5">
-                    <p><strong>Price per night:</strong> £0.00</p>
-                    <h4><strong>Total Price:</strong> £0.00</h4>
+                    <p><strong>Price per night:</strong> £ {{ $price }}</p>
+                    <h4><strong>Total Price:</strong> £ {{ $totalPrice }}</h4>
                 </div>
 
                 <button type="submit" wire:click="saveChanges" class="bg-pink-700 text-white px-3 py-1 rounded hover:bg-pink-500">

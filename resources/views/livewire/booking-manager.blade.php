@@ -43,7 +43,7 @@
                 <!-- Buttons -->
                 <div class="flex space-x-2">
                     <div>
-                    <button type="button" wire:click="$dispatch('open-modal')" class="bg-pink-700 text-white px-3 py-1 rounded hover:bg-pink-500">
+                    <button type="button" wire:click="$dispatch('open-modal', { id: '{{ $booking->property->id}}', name: '{{ $booking->property->name}}', startDate: '{{ $booking->formatted_start_date }}', endDate: '{{ $booking->formatted_end_date }}', price_per_night: '{{ $booking->price_per_night }}', total_price: '{{ $booking->total_price }}' })" class="bg-pink-700 text-white px-3 py-1 rounded hover:bg-pink-500">
                         <i class="fas fa-pen"></i>
                     </button>
                     </div>

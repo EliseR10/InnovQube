@@ -30,14 +30,6 @@ class BookingManager extends Component
         $this->endDate = Carbon::tomorrow()->format('Y-m-d');;
         $this->total_price = 0;
 
-        //Retrieve all bookings from the database + properties data
-        $this->bookings = Bookings::with('property')->get();
-
-        //Format the start_date / end_date for each booking
-        foreach($this->bookings as $booking) {
-            $booking->formatted_start_date = Carbon::parse($booking->start_date)->format('d/m/Y');
-            $booking->formatted_end_date = Carbon::parse($booking->end_date)->format('d/m/Y');
-        }
     }
 
     public function calculateTotalPrice() {
@@ -81,9 +73,20 @@ class BookingManager extends Component
 
     }
 
-
     public function render()
     {
+        //Retrieve the 3 latest bookings from the database + properties data
+        $this->bookings = Bookings::with('property')
+            ->latest() //order by 'created_at' DESC
+            ->take(3) //limits the result to the 3 most recents
+            ->get();
+
+        //Format the start_date / end_date for each booking
+        foreach($this->bookings as $booking) {
+            $booking->formatted_start_date = Carbon::parse($booking->start_date)->format('d/m/Y');
+            $booking->formatted_end_date = Carbon::parse($booking->end_date)->format('d/m/Y');
+        }
+
         return view('livewire.booking-manager', ['bookings' => $this->bookings])->layout('layouts.app');
     }
 }
