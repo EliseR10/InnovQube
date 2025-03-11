@@ -43,7 +43,7 @@
                 <!-- Buttons -->
                 <div class="flex space-x-2">
                     <div>
-                    <button type="button" wire:click="$dispatch('open-modal', { id: '{{ $booking->property->id}}', name: '{{ $booking->property->name}}', startDate: '{{ $booking->formatted_start_date }}', endDate: '{{ $booking->formatted_end_date }}', price_per_night: '{{ $booking->price_per_night }}', total_price: '{{ $booking->total_price }}' })" class="bg-pink-700 text-white px-3 py-1 rounded hover:bg-pink-500">
+                    <button type="button" wire:click="$dispatch('open-modal', { bookingID: '{{ $booking -> id}}', propertyID: '{{ $booking->property->id}}', name: '{{ $booking->property->name}}', startDate: '{{ $booking->formatted_start_date }}', endDate: '{{ $booking->formatted_end_date }}', price_per_night: '{{ $booking->price_per_night }}', total_price: '{{ $booking->total_price }}' })" class="bg-pink-700 text-white px-3 py-1 rounded hover:bg-pink-500">
                         <i class="fas fa-pen"></i>
                     </button>
                     </div>
@@ -55,7 +55,7 @@
             </div>
 
             <!-- Other Details -->
-            <div class="space-y-2">
+            <div class="space-y-2 pb-5">
                 <h4><strong>Booking Date:</strong> {{ $booking-> formatted_start_date }} to {{ $booking-> formatted_end_date }}</h4>
                 <h4><strong>Price per night:</strong> £ {{ $booking-> price_per_night }}</h4>
                 <h4><strong>Total Price:</strong> £ {{ $booking-> total_price }}</h4>

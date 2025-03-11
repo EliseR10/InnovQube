@@ -1,8 +1,15 @@
 <div>
-@if ($show)
-<div class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50">
+    @if ($show)
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50">
         <div class="bg-white p-6 rounded-lg">
             <h3 class="text-lg font-semibold mb-5">Edit Reservation</h3>
+
+            <!-- Display Success Message -->
+            @if (session()->has('message'))
+                <div class="p-5 mt-5 min-w-[600px] bg-green-500 text-white shadow rounded-lg flex flex-col items-center">
+                    {{ session('message') }}
+                </div>
+            @endif
 
             <div class="mt-4">
                 <!-- Form content for editing -->
@@ -22,16 +29,25 @@
                     <h4><strong>Total Price:</strong> £ {{ $totalPrice }}</h4>
                 </div>
 
-                <button type="submit" wire:click="saveChanges" class="bg-pink-700 text-white px-3 py-1 rounded hover:bg-pink-500">
+                <button type="button" wire:click="saveChanges" class="bg-pink-700 text-white px-3 py-1 rounded hover:bg-pink-500">
                     Save Changes
                 </button>
                 <button type="button" wire:click="closeModal" class="bg-black text-white px-3 py-1 rounded hover:bg-pink-500">
                     Close
                 </button>
             </div>
-
         </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                Livewire.on('reloadPage', () => {
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 3000);   
+                });
+            });
+        </script>
+
     </div>
-</div>
-@endif
+    @endif
 </div>
