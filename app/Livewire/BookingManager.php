@@ -63,7 +63,7 @@ class BookingManager extends Component
         ]);
 
         //Show message that booking is successfull
-        session()->flash('message', 'Your booking has been successfully created!');  
+        session()->flash('messageCreated', 'Your booking has been successfully created!');  
 
         //Reset input to default values
         $this->reset(['startDate', 'endDate', 'total_price']);
@@ -71,6 +71,21 @@ class BookingManager extends Component
         //Reload the page
         $this->dispatch('reloadPage');
 
+    }
+
+    public function deleteBooking($bookingID) {
+        //Find the booking to update by its id
+        $bookingToDelete = Bookings::find($bookingID);
+
+        if ($bookingToDelete) {
+            $bookingToDelete->delete();
+
+            //Show message that the booking was successfully amended
+            session()->flash('messageDeleted', 'Your booking has been successfully deleted!');  
+
+            //Reload the page
+            $this->dispatch('reloadPage');
+        }
     }
 
     public function render()

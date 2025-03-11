@@ -74,7 +74,7 @@ class EditBooking extends Component
             ]);
 
             //Show message that the booking was successfully amended
-            session()->flash('message', 'Your booking has been successfully amended!');  
+            session()->flash('messageUpdated', 'Your booking has been successfully amended!');  
 
             //Reload the page
             $this->dispatch('reloadPage');

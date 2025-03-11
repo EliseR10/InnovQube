@@ -5,9 +5,9 @@
             <h3 class="text-lg font-semibold mb-5">Edit Reservation</h3>
 
             <!-- Display Success Message -->
-            @if (session()->has('message'))
+            @if (session()->has('messageUpdated'))
                 <div class="p-5 mt-5 min-w-[600px] bg-green-500 text-white shadow rounded-lg flex flex-col items-center">
-                    {{ session('message') }}
+                    {{ session('messageUpdated') }}
                 </div>
             @endif
 

@@ -1,8 +1,8 @@
 <div>
-    <!-- Display Success Message -->
-    @if (session()->has('message'))
+    <!-- Display Message for Successfull Booking Creation -->
+    @if (session()->has('messageCreated'))
         <div class="p-5 mt-5 min-w-[600px] bg-green-500 text-white shadow rounded-lg flex flex-col items-center">
-            {{ session('message') }}
+            {{ session('messageCreated') }}
         </div>
     @endif
 
@@ -48,7 +48,7 @@
                     </button>
                     </div>
 
-                    <button type="button" wire:click="deleteBooking" class="bg-pink-700 text-white px-3 py-1 rounded hover:bg-pink-500">
+                    <button type="button" wire:click="deleteBooking({{ $booking -> id}})" class="bg-pink-700 text-white px-3 py-1 rounded hover:bg-pink-500">
                         <i class="fas fa-trash"></i>
                     </button>
                 </div>
@@ -62,7 +62,15 @@
                 <h6><em>Last updated on: {{ $booking -> formatted_updated_at}}</em></h6>
             </div>
         </div>
-    @endforeach
+        @endforeach
+
+        <!-- Display Message for Successfull Booking Deletion -->
+        @if (session()->has('messageDeleted'))
+            <div class="p-5 mt-5 min-w-[600px] bg-green-500 text-white shadow rounded-lg flex flex-col items-center">
+                {{ session('messageDeleted') }}
+            </div>
+        @endif
+
     </div>
 
     <script>
