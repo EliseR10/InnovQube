@@ -59,6 +59,7 @@
                 <h4><strong>Booking Date:</strong> {{ $booking-> formatted_start_date }} to {{ $booking-> formatted_end_date }}</h4>
                 <h4><strong>Price per night:</strong> £ {{ $booking-> price_per_night }}</h4>
                 <h4><strong>Total Price:</strong> £ {{ $booking-> total_price }}</h4>
+                <h6><em>Last updated on: {{ $booking -> formatted_updated_at}}</em></h6>
             </div>
         </div>
     @endforeach

@@ -25,8 +25,9 @@
                 </div>
 
                 <div class="my-5">
-                    <p><strong>Price per night:</strong> £ {{ $price }}</p>
+                    <h4><strong>Price per night:</strong> £ {{ $price }}</h4>
                     <h4><strong>Total Price:</strong> £ {{ $totalPrice }}</h4>
+
                 </div>
 
                 <button type="button" wire:click="saveChanges" class="bg-pink-700 text-white px-3 py-1 rounded hover:bg-pink-500">
