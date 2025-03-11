@@ -63,4 +63,15 @@
         </div>
     @endforeach
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Livewire.on('reloadPage', () => {
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000);   
+            });
+        });
+    </script>
+
 </div>

@@ -26,8 +26,8 @@ class BookingManager extends Component
         $this->id = $id;
         
         $this->price_per_night = $price;
-        $this->startDate = null;
-        $this->endDate = null;
+        $this->startDate = Carbon::today()->format('Y-m-d');;
+        $this->endDate = Carbon::tomorrow()->format('Y-m-d');;
         $this->total_price = 0;
 
         //Retrieve all bookings from the database + properties data
@@ -75,7 +75,10 @@ class BookingManager extends Component
 
         //Reset input to default values
         $this->reset(['startDate', 'endDate', 'total_price']);
-        $this->total_price = 0;
+
+        //Reload the page
+        $this->dispatch('reloadPage');
+
     }
 
 
