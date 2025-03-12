@@ -30,15 +30,15 @@
 
         <!-- Header -->
         <header class="text-black p-4 shadow-md w-full">
-            <div class="container mx-auto flex justify-between items-center">
+            <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center">
         
                 <!-- Title -->
-                <div class="flex-1 text-center">
+                <div class="flex-1 text-center sm:text-center mb-4 sm:mb-0">
                     <a href="{{ url('/') }}" class="text-2xl font-bold text-center">InnovQube - Book your next residence</a>
                 </div>
             
-                <!-- Authentication Buttons -->
-                <div>
+                <!-- Dashboard Buttons -->
+                <div class="w-full sm:w-auto flex justify-center sm:justify-end">
                     <button class="bg-black text-white px-4 py-2 rounded hover:bg-pink-700"><a href="{{ route('dashboard') }}">Dashboard</a></button>
                 </div>
             </div>
