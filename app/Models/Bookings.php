@@ -20,4 +20,9 @@ class Bookings extends Model
     public function property() {
         return $this->belongsTo(Properties::class);
     }
+
+    //Define the relationship to the User Model
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
