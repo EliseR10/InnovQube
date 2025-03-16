@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\BookingResource\Pages;
 use App\Filament\Resources\BookingResource\RelationManagers;
+use App\Filament\Resources\BookingResource\Widgets\BookingSummaryWidget;
 use App\Models\Bookings;
 use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;

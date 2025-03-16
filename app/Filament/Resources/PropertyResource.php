@@ -114,12 +114,6 @@ class PropertyResource extends Resource
         ];
     }
 
-    public static function getWidgets():array{
-        return [
-            PropertySummaryWidget::class,
-        ];
-    }
-
     public static function getPages(): array
     {
         return [
