@@ -10,6 +10,7 @@ use App\Filament\Resources\PropertyResource\Widgets\PropertySummaryWidget;
 use App\Models\Properties;
 use Filament\Resources\Resource;
 use Illuminate\Support\Facades\Storage;
+use Filament\Facades\Filament;
 
 //Forms
 use Filament\Forms;
@@ -80,18 +81,14 @@ class PropertyResource extends Resource
                 TextColumn::make('name')->searchable()->label('Property Name'),
                 TextColumn::make('description')
                     ->wrap() //ensure text wraps within the column
-                    ->extraAttributes(['style' => 'max-width: 500px, white-space: normal; text-align: justify']),
+                    ->extraAttributes(['style' => 'min-width: 300px; max-width: 500px; white-space: normal; text-align: justify'])
+                    ->limit(100),
                 TextColumn::make('price_per_night')->sortable()->money('GBP'), //display as currency
                 ImageColumn::make('image_url')
-                    ->size(150)
-                    ->disk('public')
+                    ->size(100)
                     ->visibility('public')
                     ->label('Image')
-                    ->url(function ($record) {
-                        //dump(asset('storage/' . $record->image_url)); // Debug output
-                        return asset('storage/' . $record->image_url);
-                    }),
-                    //->getStateUsing(fn ($record) => asset('storage/' . $record->image_url)),
+                    ->getStateUsing(fn ($record) => asset('storage/' . $record->image_url)),
                 TextColumn::make('created_at')->dateTime('d/m/Y')->sortable(),
             ])
             ->filters([
