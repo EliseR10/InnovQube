@@ -61,7 +61,7 @@ class BookingResource extends Resource
                                 $set('price_per_night', \App\Models\Properties::find($state) ?->price_per_night ?? 0)
 
                                 //recalculate and update total price
-                                && $set('total_price', number_format(self::calculateTotalPrice($get), 2))
+                                && $set('total_price', self::calculateTotalPrice($get))
                             ),
                     ]),
                 

@@ -81,6 +81,7 @@ class PropertyResource extends Resource
                 TextColumn::make('name')->searchable()->label('Property Name'),
                 TextColumn::make('description')
                     ->wrap() //ensure text wraps within the column
+                    ->html() //tells filament to render html
                     ->extraAttributes(['style' => 'min-width: 300px; max-width: 500px; white-space: normal; text-align: justify'])
                     ->limit(100),
                 TextColumn::make('price_per_night')->sortable()->money('GBP'), //display as currency

@@ -15,6 +15,11 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <!-- Filament Admin Panel Link -->
+                    <x-nav-link :href="route('filament.admin.pages.dashboard')" class="text-blue-500 font-bold">
+                        {{ __('Manage Properties & Bookings') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -70,6 +75,12 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
+            <!-- Filament Admin Panel Link -->
+            <x-responsive-nav-link :href="route('filament.admin.pages.dashboard')" class="text-blue-500 font-bold">
+                {{ __('Manage Properties & Bookings') }}
+            </x-responsive-nav-link>
+
         </div>
 
         <!-- Responsive Settings Options -->
