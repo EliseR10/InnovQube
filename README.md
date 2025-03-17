@@ -1,6 +1,6 @@
 # 🏠 Property & Booking Management - Laravel Project
 
-## 🌍 Description | Description  
+## 🌍 Description  
 
 ### 🇬🇧 English  
 This project is a **property and booking management system** built with **Laravel, Livewire, Filament, and TailwindCSS**. It allows users to manage properties, book stays, and handle reservations efficiently through an admin panel.  
@@ -23,15 +23,9 @@ Ce projet est un **système de gestion des propriétés et des réservations** d
 ## 🚀 Fonctionnalités
 
 ✅ **Authentification des utilisateurs** avec Laravel Breeze 
-
 ✅ **Gestion des propriétés** (opérations CRUD)
-
 ✅ **Système de réservation** pour la location de biens
-
 ✅ **Interface utilisateur** basée sur TailwindCSS pour un design moderne
-
 ✅ **Composant Livewire** pour les mises à jour des réservations en temps réel
-
 ✅ **Panneau d'administration Filament** pour la gestion du backend
-
 ✅ **Intégration sécurisée** de la base de données avec les migrations
