@@ -24,7 +24,7 @@ Ce projet est un **système de gestion des propriétés et des réservations** d
 
 ✅ **Authentification des utilisateurs** avec Laravel Breeze  
 ✅ **Gestion des propriétés** (opérations CRUD)  
-✅ **Système de réservation** pour la location de biens 
+✅ **Système de réservation** pour la location de biens  
 ✅ **Interface utilisateur** basée sur TailwindCSS pour un design moderne  
 ✅ **Composant Livewire** pour les mises à jour des réservations en temps réel  
 ✅ **Panneau d'administration Filament** pour la gestion du backend  
